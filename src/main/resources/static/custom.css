@@ -1,0 +1,69 @@
+body{
+background-color: #1c1b1b;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    background-color: #bdc1c7;
+    border: 1px solid rgba(0,0,0,.125);
+    font-family: Segoe Script;
+}
+.jumbotron{
+background-color: #bdc1c7;
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+}
+h2{
+color: #fff;
+font-family: Segoe Script;
+margin-top: 25px;
+margin-bottom: 25px;
+}
+
+p{
+color: #050505;
+font-family: Segoe Script;
+font-size: 18px;
+}
+div.list-group:nth-child(5) > div:nth-child(1) > div:nth-child(1) > small:nth-child(2){
+color: #050505;
+font-family: Segoe Script;
+}
+
+.navbar-nav{
+font-family: Segoe Script;
+}
+.nav{
+font-family: Segoe Script;
+}
+.bg-dark {
+    background-color: #272829 !important;
+}
+
+#username{
+color: #007bff;
+font-family: Segoe Script;
+}
+#password{
+color: #007bff;
+font-family: Segoe Script;
+}
+#email{
+font-family: Segoe Script;
+color: #007bff;
+}
+#firstName{
+font-family: Segoe Script;
+color: #007bff;
+}
+#lastName{
+font-family: Segoe Script;
+color: #007bff;
+}
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }

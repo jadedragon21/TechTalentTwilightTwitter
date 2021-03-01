@@ -1,0 +1,43 @@
+<div th:fragment="navbarotherpages">
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/" style="color: #1da1f2">
+                <i class="fab fa-twitter"></i> Tech Talent Twilight Tweeter</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fa fa-fw fa-home" aria-current="page" style="color: #1da1f2" href="/tweets">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #1da1f2" href="/tweets/new">New Tweet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #1da1f2" href="/tweets/{tag}">Hash Tweets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #1da1f2" href="../signup">Sign up</a>
+                    </li>
+
+
+
+                    <!--                <li><a class="dropdown-item" style="color: #1da1f2" sec:authorize="isAuthenticated()" href="/logout">Logout</a><li>-->
+                    <li><a class="nav-link" style="color: #1da1f2" sec:authorize="isAuthenticated()" href="/users">Users</a></li>
+
+                    <li class="nav-item active" sec:authorize="isAuthenticated()">
+                        <a class="nav-link" style="color: #1da1f2" th:href="@{|/users/${#authentication.name}|}">
+                            @<span sec:authentication="name"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item active" sec:authorize="isAuthenticated()">
+                        <a class="nav-link" style="color: #1da1f2" href="../logout">Logout</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </nav>

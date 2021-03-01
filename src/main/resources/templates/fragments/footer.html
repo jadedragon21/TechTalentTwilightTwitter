@@ -1,0 +1,58 @@
+<div th:fragment="footer">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            h3{
+            color: #1da1f2;
+            margin-top:450px;
+            margin-left:25px;
+            font-family: Segoe Script;
+            }
+        </style>
+    </head>
+
+ <body>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <!--Remember to add the /login or /newTweets etc. where href ="#" is to get it to point to the right page. see controllers for more info-->
+                        <!--added this note on 2/24/21 for people and future reference-->
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <!-- Once again change out the hrefs to point to the right page reference the controllers or add in links to other webpages in the #-->
+                            <!--added this note on 2/24/21 for people and future reference-->
+                            <li><a href="#">Our Company</a></li>
+                            <li><a href="#">Team Twilight</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Tech Talent Twilight</h3>
+                        <p>We here at Tech Talent Twilight have been slaving away to bring you a working and stylish
+                            Twitter-like page from home during the pandemic/apocolypse of 2020-2021. We hope you enjoy
+                            this mock-up of a footer while we burn with the thirst for knowledge while needing
+                            showers.
+                        </p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                            class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a
+                            href="#"><i class="icon ion-social-instagram"></i></a>
+                    </div>
+               </div>
+                       <p class="copyright">TTT © 2021</p>
+            </div>
+        </footer>
+    </div>
+</body>

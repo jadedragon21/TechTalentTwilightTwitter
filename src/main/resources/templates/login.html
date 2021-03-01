@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Login</title>
+    <link th:replace="fragments/head">
+    <style>
+        h2{color: #007bff;}
+        p{color: #fff;}
+
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div th:replace="fragments/navbar"></div>
+    <h2>Welcome to Tech Talent Twilight Twitter!</h2>
+    <p style="margin-bottom: 50px">We hope you enjoy using our demo of our assignment!</p>
+
+    <!--where the user name and passowrd form begins-->
+    <form th:action="@{/signup}" method="get">
+        <button class="btn btn-md btn-primary btn-block" name="Submit"
+                type="Submit">Sign up</button>
+    </form>
+    <form th:action="@{/login}" method="post">
+        <br /> <input type="text" id="username" name="username"
+                      th:placeholder="Username" class="form-control" /><br /> <input
+            type="password" th:placeholder="Password" id="password"
+            name="password" class="form-control" /> <br />
+        <div align="center" th:if="${param.error}">
+            <h4 style="color: red;">Login unsuccessful.</h4>
+        </div>
+        <button class="btn btn-md btn-success btn-block btn-dark" name="Submit"
+                value="Login" type="Submit">Log in</button>
+    </form>
+    <img class="displayed" style="margin-bottom: 2em" src="resources/static/images/dancing llama.gif" width="150" th:src="@{images/dancing llama.gif}"/>
+</div>
+<div th:replace="fragments/footer"></div>
+<script th:replace="fragments/scripts"></script>
+
+</body>
+</html>

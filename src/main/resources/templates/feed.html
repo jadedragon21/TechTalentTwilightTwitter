@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Twitter Feed</title>
+    <link th:replace="fragments/head">
+</head>
+
+<body>
+   <div class="container-fluid">
+     <div th:replace="fragments/navbarotherpages"></div>
+    <ul class="nav nav-tabs">
+        <li style="padding-left:2em" role="presentation"
+            th:classappend="${filter == 'all' ? 'active' : '' }"><a
+                href="/tweets">All</a></li>
+        <li>/</li>
+        <li style="padding-left:2em" role="presentation"
+            th:classappend="${filter == 'following' ? 'active' : '' }"><a
+                href="/tweets?filter=following">Following</a></li>
+    </ul>
+    <br/>
+    <h2 style="text-align:center">Tweets</h2>
+    <i style="color: #1da1f2" class="fab fa-twitter"></i><span style="color: #1da1f2">Tweet</span>
+    <i style="color: #1da1f2" class="fab fa-twitter"></i><span style="color: #1da1f2">Tweet</span>
+    <i style="color: #1da1f2" class="fab fa-twitter"></i><span style="color: #1da1f2">Tweet</span>
+    <i style="color: #1da1f2" class="fab fa-twitter"></i><span style="color: #1da1f2">Tweet</span>
+    <i style="color: #1da1f2" class="fab fa-twitter"></i><span style="color: #1da1f2">Tweet</span>
+    <img style="margin-bottom: 2em" src="resources/static/images/Sheep.png" width="50" th:src="@{images/Sheep.png}"/>
+    <span style="color: #1da1f2">Bahhhh</span>
+    <div class="list-group" th:each="tweet:${tweetList}">
+        <div class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5>
+                    <a style="color: #1da1f2;" class="username"
+                       th:href="@{/users/} + ${tweet.user.username}"> @<span
+                            th:text="${tweet.user.username}"></span>
+                    </a>
+                </h5>
+                <small th:text="${tweet.date}"></small>
+            </div>
+            <p th:utext="${tweet.message}"></p>
+        </div>
+     </div>
+     <div th:if="${#lists.isEmpty(tweetList)}">
+        <h3>No tweets have been created yet</h3>
+     </div>
+ </div>
+<div th:if="${#lists.isEmpty(tweetList) and filter == 'all'}">
+    <h3>No tweets have been created yet</h3>
+</div>
+<div th:if="${#lists.isEmpty(tweetList) and filter == 'following'}">
+    <h3>No tweets have been created by your followers</h3>
+</div>
+ <div th:replace="fragments/footer"></div>
+   <script th:replace="fragments/scripts"></script>
+
+</body>
+</html>
