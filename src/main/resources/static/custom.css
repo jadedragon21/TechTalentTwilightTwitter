@@ -67,3 +67,10 @@ img.displayed {
     display: block;
     margin-left: auto;
     margin-right: auto; }
+
+iframe.displayed{
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:150px;
+}
